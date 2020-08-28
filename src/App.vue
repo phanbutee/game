@@ -1,19 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div style="background-color: black">
+    <div id="app">
+      <h1>Cosmic battle</h1>
+      <Counter label />
+      <br />
+      <br />
+    </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Counter from "./components/Counter";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Counter,
+  },
+  data: function () {
+    return {
+      total1: 0,
+      total2: 0,
+    };
+  },
+  methods: {
+    sum(counterValue) {
+      this.total1 = counterValue;
+    },
+
+    sum1(counterValue) {
+      this.total2 = counterValue;
+    },
+  },
+};
 </script>
 
 <style>
@@ -22,7 +39,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: red;
+  margin: auto;
 }
 </style>
